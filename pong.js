@@ -149,4 +149,5 @@ function user2_keyUpHandler(e) {
 		user2_downPressed = false;
 	}
 }
+
 let interval = setInterval(draw, 10);
