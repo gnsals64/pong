@@ -163,9 +163,16 @@ function User1_gameover() {
     if (
       pongmember.ball.y > pongmember.user2.posY &&
       pongmember.ball.y < pongmember.user2.posY + pongmember.paddle.height &&
+      pongmember.ball.x < pongmember.canvas.width - 50 &&
+      pongmember.user2.skill == true
+    ) {
+      pongmember.ball.dx = -7;
+    } else if (
+      pongmember.ball.y > pongmember.user2.posY &&
+      pongmember.ball.y < pongmember.user2.posY + pongmember.paddle.height &&
       pongmember.ball.x < pongmember.canvas.width - 50
     ) {
-      pongmember.ball.dx = -pongmember.ball.dx;
+      pongmember.ball.dx = -3;
     }
   }
 }
@@ -192,9 +199,18 @@ function User2_gameover() {
     if (
       pongmember.ball.y > pongmember.user1.posY &&
       pongmember.ball.y < pongmember.user1.posY + pongmember.paddle.height &&
+      pongmember.ball.x > pongmember.ball.radius + 50 &&
+      pongmember.user1.skill == true
+    ) {
+      console.log('go');
+      pongmember.ball.dx = 7;
+    } else if (
+      pongmember.ball.y > pongmember.user1.posY &&
+      pongmember.ball.y < pongmember.user1.posY + pongmember.paddle.height &&
       pongmember.ball.x > pongmember.ball.radius + 50
     ) {
-      pongmember.ball.dx = -pongmember.ball.dx;
+      console.log('no');
+      pongmember.ball.dx = 3;
     }
   }
 }
